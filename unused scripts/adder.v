@@ -18,13 +18,13 @@ module full_adder(a,b,cin,sum,cout);
 endmodule
 
 module paralleladder11bit (a,b,cin,sum,cout);
-    input [9:0]a,b;
+    input [10:0]a,b;
     input cin;
     
     output cout;
-    output [9:0]sum;
+    output [10:0]sum;
 
-    wire [8:0]c;
+    wire [9:0]c;
 
     full_adder fa0(a[0],b[0],cin,sum[0],c[0]);
     full_adder fa1(a[1],b[1],c[0],sum[1],c[1]);
@@ -35,7 +35,7 @@ module paralleladder11bit (a,b,cin,sum,cout);
     full_adder fa6(a[6],b[6],c[5],sum[6],c[6]);
     full_adder fa7(a[7],b[7],c[6],sum[7],c[7]);
     full_adder fa8(a[8],b[8],c[7],sum[8],c[8]);
-    full_adder fa9(a[9],b[9],c[8],sum[8],cout);
-
+    full_adder fa9(a[9],b[9],c[8],sum[9],c[9]);
+    full_adder fa10(a[10],b[10],c[9],sum[10],cout);
 
 endmodule
