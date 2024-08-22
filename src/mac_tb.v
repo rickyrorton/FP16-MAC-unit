@@ -45,13 +45,13 @@ module FP16MAC_tb;
         
 
         // Test Case 1: Multiply and accumulate (2.5 * 4.0)
-        A = 16'h4200; // 2.5 in IEEE 754 half-precision format
+        A = 16'h4200; // 3.0 in IEEE 754 half-precision format
         B = 16'h4400; // 4.0 in IEEE 754 half-precision format
         #10;
 
         // Test Case 2: Multiply and accumulate (1.5 * 3.0)
         A = 16'h3E00; // 1.5 in IEEE 754 half-precision format
-        B = 16'h4040; // 3.0 in IEEE 754 half-precision format
+        B = 16'h4040; // 2.125 in IEEE 754 half-precision format
         #10;
 
         // Test Case 3: Multiply and accumulate (0.5 * 2.0)
@@ -75,13 +75,13 @@ module FP16MAC_tb;
         reset = 1;
         #10;
 
-        A = 16'h4200; // 2.5 in IEEE 754 half-precision format
+        A = 16'h4200; // 3.0 in IEEE 754 half-precision format
         B = 16'h4400; // 4.0 in IEEE 754 half-precision format
         #10;
 
         // Test Case 2: Multiply and accumulate (1.5 * 3.0)
         A = 16'h3E00; // 1.5 in IEEE 754 half-precision format
-        B = 16'h4040; // 3.0 in IEEE 754 half-precision format
+        B = 16'h4040; // 2.125 in IEEE 754 half-precision format
         #10;
 
         // Test Case 3: Multiply and accumulate (0.5 * 2.0)

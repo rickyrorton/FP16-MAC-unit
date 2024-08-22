@@ -1,13 +1,13 @@
-module multiplier(a, b, out);
+module multiplier(a, b, result);
     input  [15:0] a, b;
-    output [15:0] out;
+    output [15:0] result;
 
 	reg a_sign;
-    reg [4:0] a_exponent;
+    reg [5:0] a_exponent;
     reg [10:0] a_mantissa;
 
 	reg b_sign;
-    reg [4:0] b_exponent;
+    reg [5:0] b_exponent;
     reg [10:0] b_mantissa;
 
     reg o_sign;
@@ -16,7 +16,7 @@ module multiplier(a, b, out);
 
 	reg [22:0] product;
 
-    assign out = {o_sign,o_exponent,o_mantissa[9:0]};
+    assign result = {o_sign,o_exponent,o_mantissa[9:0]};
 
 	reg  [4:0] i_e;
 	reg  [22:0] i_m;

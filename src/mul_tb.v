@@ -15,8 +15,8 @@ module multiplier_tb;
     $monitor("a = %h, b = %h, out = %h", a, b, out);
 
     // Test case 1
-    a = 16'h3800; // 2.5 in 5-bit exponent, 11-bit mantissa
-    b = 16'h3800; // 1.25 in 5-bit exponent, 11-bit mantissa
+    a = 16'h4200; // 2.5 in 5-bit exponent, 11-bit mantissa
+    b = 16'h4400; // 1.25 in 5-bit exponent, 11-bit mantissa
     #10;
 
     // Test case 2

@@ -15,33 +15,33 @@ module FP16MAC (A, B, result, clk, reset);
 
     multiplier mul(.a(a),
                    .b(b),
-                   .out(product)
+                   .result(product)
     );
 
     adder add(.a(product_reg),
               .b(accumulator),
-              .out(sum)
+              .result(sum)
     );
 
     always @(posedge clk or negedge reset) begin
-        if(!reset)begin
-            a <= 16'd0;
-            b <= 16'd0;
-            product_reg <= 16'd0;
-            accumulator <= 16'd0;
-        end
+                if(!reset)begin
+                    a <= 16'd0;
+                    b <= 16'd0;
+                    product_reg <= 16'd0;
+                    accumulator <= 16'd0;
+                end
 
-        else begin
-            //Stage 1: load data
-            a <= A;
-            b <= B;
+                else begin
+                    //Stage 1: load data
+                    a <= A;
+                    b <= B;
 
-            //Stage 2: multiply
-            product_reg <= product;
+                    //Stage 2: multiply
+                    product_reg <= product;
 
-            //Stage 3: add
-            accumulator <= sum;
-        end
+                    //Stage 3: add
+                    accumulator <= sum;
+                end
     end
 
     assign result = accumulator;

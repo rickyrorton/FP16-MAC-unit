@@ -1,8 +1,8 @@
-module adder(a, b, out);
+module adder(a, b, result);
   input  [15:0] a, b;
-  output [15:0] out;
+  output [15:0] result;
 
-  wire [15:0] out;
+  wire [15:0] result;
 
 	reg a_sign;
 	reg [4:0] a_exponent;
@@ -34,7 +34,7 @@ module adder(a, b, out);
     .out_m(o_m)
   );
 
-  assign out = {o_sign,o_exponent,o_mantissa[9:0]};
+  assign result = {o_sign,o_exponent,o_mantissa[9:0]};
 
   always @ ( * ) begin
 
